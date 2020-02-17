@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:gravity="center"
+    android:background="#707070"
+    tools:context="infoaryan.in.vegmet.viewpagers">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hands On !"
+        android:textSize="25sp"
+        android:fontFamily="casual"
+        android:textColor="#fff"
+        android:gravity="center"
+        />
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:id="@+id/viewpagers"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:gravity="right"
+        android:weightSum="6"
+        android:layout_height="56dp"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_weight="5"
+            >
+            <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                android:id="@+id/dots_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:dotsColor="#C2C2C2"
+                app:dotsCornerRadius="8dp"
+                app:dotsSize="16dp"
+                android:layout_gravity="center_vertical"
+                app:dotsSpacing="4dp"
+
+                app:dotsWidthFactor="2.5"
+                app:selectedDotColor="#4B4B4B"
+                android:layout_marginRight="20dp"
+                app:progressMode="true"
+                /></LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center_vertical"
+            android:textAlignment="viewEnd"
+            android:background="#707070"
+            android:fontFamily="casual"
+            android:id="@+id/skip"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_directions_run_black_24dp"
+            android:drawableTint="@color/cardview_light_background"
+            android:textColor="@color/cardview_light_background"
+            android:text="Skip"
+            />
+    </LinearLayout>
+
+</LinearLayout>

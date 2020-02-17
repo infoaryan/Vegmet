@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:background="#3D3D3D"
+    android:weightSum="10"
+    tools:context=".Allads">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Back to previous page"
+        android:fontFamily="casual"
+        android:textSize="20sp"
+        android:background="@drawable/gradient_button"
+        android:id="@+id/back"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/recycle"
+        android:background="#3D3D3D"
+        >
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

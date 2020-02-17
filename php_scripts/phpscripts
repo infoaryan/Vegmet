@@ -1,0 +1,254 @@
+
+constants.php-------------------------------------------------------------
+
+<?php
+	define('DB_NAME','YOUR_DB_NAME');
+	define('DB_USER','YOUR_DB_USERNAME');
+	define('DB_PASSWORD','YOUR_PASSWORD');
+	define('DB_HOST','localhost');
+
+
+
+
+dbconnect.php-------------------------------------------------------------
+<?php
+	class dbconnect{
+
+		private $con;
+		function __construct(){
+		
+		}
+		function connect(){
+
+			include_once dirname(__FILE__).'/constants.php';
+
+			$this->con= new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+
+			if(mysqli_connect_errno()){
+				
+				echo "failed to connect".mysqli_connect_err();
+			}
+			return $this->con;
+		}
+	}
+
+dboperations.php-------------------------------------------------------------
+<?php
+
+
+	class dboperation{
+        	private $con;
+		function __construct(){
+		require_once dirname(__FILE__).'/dbconnect.php';
+	    $db = new dbconnect();
+		$this->con = $db->connect();}	
+
+	public	function createseller($name,$phone,$location){
+		    
+		if($this->ifsellerexist($phone)){
+		  $this->getseller($phone);
+		}
+		else{
+		    	$stmt = $this->con->prepare("INSERT INTO seller(name,phone,location) VALUES (?,?,?)");
+			$stmt->bind_param("sss",$name,$phone,$location);
+			if($stmt->execute()){
+			$response['error']=false;
+			$response['message']='registered';
+			$response['id']=1;
+			} 
+				else{
+			$response['error']=true;
+			$response['message']='error occured';}
+		}
+
+		}
+
+	public	function createconsumer($name,$phone,$location){
+		if($this->ifconsumerexist($phone)){
+		   $this->getconsumer($phone);
+		}
+		else{
+		    	$stmt = $this->con->prepare("INSERT INTO consumer(name,phone,location) VALUES (?,?,?)");
+			$stmt->bind_param("sss",$name,$phone,$location);
+			if($stmt->execute()){
+			$response['error']=false;
+			$response['message']='registered';
+			$response['id']=1;
+			} 
+			else{
+			$response['error']=true;
+			$response['message']='error occured';
+			}
+
+		}
+		}
+		function ifsellerexist($phone){
+		    $stmt = $this->con->prepare("SELECT name FROM seller WHERE phone=$phone");
+		    $stmt->execute();
+		    $stmt->store_result();
+            return $stmt->num_rows>0;		    
+		}
+	function ifconsumerexist($phone){
+		    $stmt = $this->con->prepare("SELECT name FROM consumer WHERE phone=$phone");
+		    $stmt->execute();
+		    $stmt->store_result();
+            return $stmt->num_rows>0;		    
+		}
+		function getseller($phone){
+		    $stmt = $this->con->prepare("SELECT name,phone,location FROM seller WHERE phone=$phone");
+		    $stmt->execute();
+		    $stmt->bind_result($name,$Phone,$location);
+		    $stmt->fetch();
+		    $response = array();
+		    $response['error'] = 1;
+		    $response['message'] = "logged in";
+		    $response['name'] =$name;
+		    $response['phone'] =$Phone;
+		    $response['location'] = $location;
+		    	$response['id']=1;
+		    echo json_encode($response);
+		}
+			function getconsumer($phone){
+		      $stmt = $this->con->prepare("SELECT name,phone,location FROM consumer WHERE phone=$phone");
+		    $stmt->execute();
+		    $stmt->bind_result($name,$Phone,$location);
+		    $stmt->fetch();
+		    		    $response = array();
+		    $response['error'] = false;
+		    $response['id']=1;
+		    $response['message'] = "logged in";
+		    $response['name'] =$name;
+		    $response['phone'] =$Phone;
+		    $response['location'] = $location;
+		    echo json_encode($response);
+		}
+			function getads(){
+		    
+		    $stmt= $this->con->prepare("SELECT title,description,price,image FROM ads");
+		    $stmt->execute();
+		    $stmt->bind_result($title,$description,$price,$image);
+		    $results = array();
+		    while($stmt->fetch()){
+		        $result = array();
+		        $result['title'] = $title;
+		        $result['desc'] = $description;
+		        $result['price'] = $price;
+		        $result['image'] = $image;
+		        array_push($results,$result);
+		        
+		    }
+		    echo json_encode($results);
+		 
+		}
+			function getadsbyphone($phone){
+		    
+		    $stmt= $this->con->prepare("SELECT title,description,price FROM ads where phone=$phone");
+		    $stmt->execute();
+		    $stmt->bind_result($title,$description,$price);
+		    $results = array();
+		    while($stmt->fetch()){
+		        $result = array();
+		        $result['title'] = $title;
+		        $result['desc'] = $description;
+		        $result['price'] = $price;
+		       
+		        array_push($results,$result);
+		        
+		    }
+		    echo json_encode($results);
+		 
+		}
+		
+
+	}
+	?>
+
+createconsumer.php-------------------------------------------------------------
+<?php
+
+	require_once '../includes/dboperations.php';
+	
+
+		$db = new dboperation();
+		$db->createconsumer($_POST['name'],$_POST['phone'],$_POST['location']);
+	
+	
+	?>
+	
+createseller.php-------------------------------------------------------------
+
+
+
+<?php
+
+	require_once '../includes/dboperations.php';
+
+	if($_SERVER['REQUEST_METHOD']=='POST'){
+		$db = new dboperation();
+	$db->createseller($_POST['name'],$_POST['phone'],$_POST['location']);
+	
+
+	}
+	?>
+getads.php-------------------------------------------------------------
+<?php
+
+	require_once '../includes/dboperations.php';
+	$response = array();
+
+		$db = new dboperation();
+	$db->getads();
+	
+
+	?>
+
+
+signinconsumer.php
+<?php
+
+	require_once '../includes/dboperations.php';
+
+	
+		$db = new dboperation();
+		$phone = $_POST['phone'];
+	if($db->ifconsumerexist($phone)){
+	   $db->getconsumer($phone); 
+	    
+	}
+	else{
+	    $response = array();
+	    $response['message']="consumer not registered!";
+	    echo json_encode($response);
+	}
+	
+		
+	
+	?>
+
+
+signinseller.php------------------------------------------------------
+<?php
+
+	require_once '../includes/dboperations.php';
+
+	
+		$db = new dboperation();
+	
+	if($db->ifsellerexist($_POST['phone'])){
+	   $db->getseller($_POST['phone']); 
+	    
+	}
+	else{
+	    	$response = array();
+	    $response['id']=0;
+	    $response['message']="seller not registered!";
+	    	echo json_encode($response);
+	}
+	
+	
+	
+	?>
+
+
+
+create

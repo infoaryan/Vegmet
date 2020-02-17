@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "461714844686",
+    "firebase_url": "https://vegmet-31652.firebaseio.com",
+    "project_id": "vegmet-31652",
+    "storage_bucket": "vegmet-31652.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461714844686:android:bf8b2705f8b6834f96e05f",
+        "android_client_info": {
+          "package_name": "infoaryan.in.vegmet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461714844686-54m91jkc614nlqph0vgm0o3l6eucog1j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "infoaryan.in.vegmet",
+            "certificate_hash": "063d4e4b2e68b597764d4fa7aed673bb56a03651"
+          }
+        },
+        {
+          "client_id": "461714844686-tjmiko934gfl6k476op9fl01ii856uh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqWqT8lywKYfVkYd547cj5hGVVLcDdY60"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461714844686-tjmiko934gfl6k476op9fl01ii856uh8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

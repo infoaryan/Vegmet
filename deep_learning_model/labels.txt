@@ -1,0 +1,81 @@
+Apple Braeburn
+Apple Crimson Snow
+Apple Golden 2
+Apple Golden 3
+Apple Granny Smith
+Apple Pink Lady
+Apple Red 1
+Apple Red 2
+Apple Red Delicious
+Apple Red Yellow 1
+Apple Red Yellow 2
+Apricot
+Banana
+Banana Lady Finger
+Beetroot
+Cauliflower
+Cherry 2
+Cherry Wax Black
+Cherry Wax Red
+Cocos
+Dates
+Eggplant
+Ginger Root
+Grape White
+Grape White 2
+Grape White 3
+Grapefruit Pink
+Grapefruit White
+Guava
+Hazelnut
+Kiwi
+Lemon
+Lemon Meyer
+Limes
+Lychee
+Mandarine
+Mango
+Mango Red
+Mangostan
+Maracuja
+Nut Forest
+Nut Pecan
+Onion Red
+Onion Red Peeled
+Onion White
+Orange
+Papaya
+Passion Fruit
+Peach
+Peach 2
+Peach Flat
+Pear
+Pear Red
+Pear Williams
+Pepino
+Pepper Green
+Pepper Red
+Pepper Yellow
+Pineapple
+Pineapple Mini
+Plum
+Plum 2
+Plum 3
+Pomegranate
+Pomelo Sweetie
+Potato Red
+Potato Red Washed
+Potato Sweet
+Potato White
+Raspberry
+Strawberry
+Strawberry Wedge
+Tangelo
+Tomato 1
+Tomato 2
+Tomato 3
+Tomato 4
+Tomato Cherry Red
+Tomato Maroon
+Tomato Yellow
+Walnut
