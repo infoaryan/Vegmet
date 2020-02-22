@@ -13,7 +13,10 @@ The Project is aimed at creating an mobile app for the betterment of the vegetab
 <h1>Brief Description</h1>
 <h3> Solution to the above raised problem </h3>
 1. There would be an interface for the proper registration of the Vendors of veggies and also the
-    consumers so that there is a lack of piracy.
-    
-<p align=center><img src="https://raw.githubusercontent.com/infoaryan/Vegmet/master/android_app/app/src/main/res/drawable/sc2.jpg" width="100" height="300" >                   <img src="https://raw.githubusercontent.com/infoaryan/Vegmet/master/android_app/app/src/main/res/drawable/sc3.jpg" width="100" height="300"  ></p>
+    consumers so that there is a lack of piracy. 
+<img src="https://raw.githubusercontent.com/infoaryan/Vegmet/master/android_app/app/src/main/res/drawable/sc1.jpg" width="200" height="350" ><img src="https://raw.githubusercontent.com/infoaryan/Vegmet/master/android_app/app/src/main/res/drawable/sc2.jpg" width="200" height="350" ><img src="https://raw.githubusercontent.com/infoaryan/Vegmet/master/android_app/app/src/main/res/drawable/sc3.jpg" width="200" height="350">
+
+2.Here the left image depicts the UI element of Consumer side.There are various options for the easiness of the usage and also afastlane fo browsing of the nearest and feasible solutions.
+
+<img src="https://raw.githubusercontent.com/infoaryan/Vegmet/master/android_app/app/src/main/res/drawable/sc4.jpg" width="200" height="350" >
     
