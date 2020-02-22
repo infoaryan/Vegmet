@@ -15,5 +15,5 @@ The Project is aimed at creating an mobile app for the betterment of the vegetab
 1. There would be an interface for the proper registration of the Vendors of veggies and also the
     consumers so that there is a lack of piracy.
     
-<p align=center><img src="https://raw.githubusercontent.com/infoaryan/Vegmet/master/app/src/main/res/drawable/sc2.jpg" width="300"  > <img src="https://raw.githubusercontent.com/infoaryan/Vegmet/master/app/src/main/res/drawable/sc3.jpg" width="300"  ></p>
+<p align=center><img src="https://raw.githubusercontent.com/infoaryan/Vegmet/master/android_app/app/src/main/res/drawable/sc2.jpg" width="100" height="300" >                   <img src="https://raw.githubusercontent.com/infoaryan/Vegmet/master/android_app/app/src/main/res/drawable/sc3.jpg" width="100" height="300"  ></p>
     
